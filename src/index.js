@@ -7,7 +7,7 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put }from 'redux-saga/effects'
 import axios from 'axios';
-import { response } from 'express';
+
 
 
 function* fetchGifs () {
@@ -31,6 +31,15 @@ function* rootSaga(){
 }
 // middleware for saga
 const sagaMiddleware = createSagaMiddleware();
+
+const storeInstance = createStore(
+    combineReducers({
+        
+    }),
+    // Add sagaMiddleware to our store
+    applyMiddleware(sagaMiddleware, logger),
+);
+
 
 sagaMiddleware.run(rootSaga);
 

@@ -1,7 +1,7 @@
 function Search() {
   return (
     <>
-    
+      <h2></h2>
     </>
   )
 }

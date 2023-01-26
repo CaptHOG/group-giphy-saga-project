@@ -1,12 +1,12 @@
 import React from 'react';
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux';
 
 
 function App(props) {
 
+const getFavorite = () => {
 
- const getFavorite = () => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 //const variable-that-takes-form-of-the-store = useSelector((store)=>store.reducerName) 
   //look for Connor get message
   dispatch({
@@ -14,12 +14,11 @@ const dispatch = useDispatch();
   })
  }
 
-
-
   return (
-    <div>
-      <h1>Giphy Search!</h1>
-      
+    <div className="App">
+      <header className="header">
+        <h1>Giphy Search!</h1>
+      </header>
     </div>
   );
 }

@@ -9,6 +9,27 @@ import { takeEvery, put }from 'redux-saga/effects'
 import axios from 'axios';
 
 
+function* sendSearch (action) {
+    // 3. send search takes the dispatch from 'SAGA_FETCH_SEARCH', and supplying the function with the search term.
+    try{
+        // 4. assigns the term to the searchQuery variable.
+        const searchQuery = action.payload;
+        // 5. set params with the variable of searchQuery as an object.
+        const response = yield  axios({
+            method:  'GET',
+            url: '/api/favorite/search',
+            params: {searchQuery}
+        })
+        // Send GIF data to results reducer
+     yield put ({
+        // 9. this sets the state of the reducer with the corresponding type.
+        type: 'SET_SEARCH',
+        payload: response
+        })
+    }catch (error){
+        console.log(`sendSearch broke POST saga index`, error);
+    }
+}
 
 function* fetchGifs () {
     try{
@@ -25,20 +46,7 @@ function* fetchGifs () {
     }
 }
 
-function* fetchSearch () {
-    try{
-        const response = yield  axios({
-            method:  'GET',
-            url: '/api/favorite/search'
-        })
-     yield put ({
-        type: 'SET_SEARCH',
-        payload: response.data
-        })
-    }catch (error){
-        console.log(`fetch search broke GET saga index`, error);
-    }
-} 
+
 
 const favorites = (state = [], action) => {
     switch (action.type) {
@@ -49,6 +57,7 @@ const favorites = (state = [], action) => {
     }
 }
 
+// 10. this is the reducer that was set from the above sendSearch function.
 const results = (state = [], action) => {
     switch (action.type) {
         case 'SET_SEARCH':
@@ -62,8 +71,8 @@ const results = (state = [], action) => {
 // Creates generator 
 function* rootSaga(){
     yield  takeEvery('SAGA_FETCH_GIFS', fetchGifs)
-    yield  takeEvery('SAGA_FETCH_SEARCH', fetchSearch)
-
+    // 2. sendSearch listens for 'SAGA_FETCH_SEARCH' and then sendSearch gets called
+    yield  takeEvery('SAGA_FETCH_SEARCH', sendSearch)
 }
 // middleware for saga
 const sagaMiddleware = createSagaMiddleware();

@@ -5,7 +5,7 @@ function Favorites() {
   const dispatch = useDispatch();
 
   const favorites = useSelector(store => store.favorites);
-  const results = useSelector(store => store.results);
+  
   
 
   console.log(results);
@@ -13,7 +13,7 @@ function Favorites() {
 
   useEffect(() => {
     getGifs();
-    searchGifs();
+    // searchGifs();
   }, []);
 
   const getGifs = () => {
@@ -22,11 +22,11 @@ function Favorites() {
     })
   }
 
-  const searchGifs = () => {
-    dispatch({
-        type: 'SAGA_FETCH_SEARCH',     
-    })
-  }
+  // const searchGifs = () => {
+  //   dispatch({
+  //       type: 'SAGA_FETCH_SEARCH',     
+  //   })
+  // }
 
 
   
@@ -38,11 +38,7 @@ function Favorites() {
             return <img key={image.id} src={image.url}></img>
         })}
       </div>
-      <div>
-        {results.map((image) => {
-            return <img key={image.id} src={image.images.fixed_height.url}></img>
-        })}
-      </div>
+      
     </>
   )
 }

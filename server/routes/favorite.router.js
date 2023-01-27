@@ -1,7 +1,8 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const giphy_api_key = process.env.GIPHY_API_KEY;
-const router = express.Router();
+const router = express.Router()
+const axios = require('axios');
 
 
 // GET - return all favorite images
@@ -14,6 +15,19 @@ router.get('/', (req, res) => {
       console.error('Error GET /api/favorite', error);
       res.sendStatus(500);  
     });
+});
+
+router.get('/search', (req, res) => {
+  axios({
+    method: 'GET',
+    url: "http://api.giphy.com/v1/gifs/search?q=naruto&api_key=Tdx438IJCcCEGTlj6kueeq9SBkz9mnRz&limit=15"
+  }).then((response) => {
+    console.log(response.data);
+    res.send(response.data);
+  }).catch((error) => {
+    console.log('GET /search fail:', error);
+    res.sendStatus(500);
+  })
 });
 
 // POST - add a new favorite

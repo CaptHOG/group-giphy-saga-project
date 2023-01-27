@@ -6,6 +6,7 @@ import Search from '../Search';
 import './App.css';
 
 
+
 function App(props) {
 
 const getFavorite = () => {
@@ -19,6 +20,7 @@ const getFavorite = () => {
  }
 
   return (
+
     <Router>
       <div className="App">
         <header className="header">

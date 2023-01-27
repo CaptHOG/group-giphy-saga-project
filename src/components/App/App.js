@@ -1,5 +1,6 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux'
+import Favorites from '../Favorites';
 
 
 function App(props) {
@@ -19,6 +20,7 @@ const dispatch = useDispatch();
   return (
     <div>
       <h1>Giphy Search!</h1>
+      <Favorites />
       
     </div>
   );

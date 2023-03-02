@@ -26,8 +26,6 @@ function Search() {
    
   }
 
-  
-
   return (
     <>
       <h2>Search for a GIF!</h2>

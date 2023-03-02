@@ -1,49 +1,65 @@
-# Giphy Search and Favorites
+# Giphy Search
 
-This week you will be building a Giphy searching and favoriting application which allows the user to save images and sort them into categories.
+Search for "panda"
+![panda screenshot](public/images/giphy-screenshot-panda.png)
 
-In this project you will need to utilize React, Redux, Redux-Saga and integrate them with a 3rd party API....all in a group project!
+Search for "apple"
+![apple screenshot](public/images/giphy-screenshot-apple.png)
 
-## Team Setup
-Do not clone this repository. Instead, have one person create a new repo by clicking on the **Use this template** button to make a copy. Make your team collaborators on the new repo you have created. The rest of the team members that did not make the initial repo will clone directly from the person who created the new repo, **do NOT fork** the repo.
+## Description
+
+This was a group project using Redux-Saga and the Giphy API endpoint. Based on what is entered into the search input, the results are pulled from the Giphy API and displayed on the DOM.
+
+### Project Goals
+
+* Allow a user to enter a search string and submit a search request.
+* Query the `Giphy API Search Endpoint` with the given search string **FROM THE SERVER**.
+* Display the results on the DOM.
+
+<!-- This week you will be building a Giphy searching and favoriting application which allows the user to save images and sort them into categories.
+
+In this project you will need to utilize React, Redux, Redux-Saga and integrate them with a 3rd party API....all in a group project! -->
+
+<!-- ## Team Setup
+Do not clone this repository. Instead, have one person create a new repo by clicking on the **Use this template** button to make a copy. Make your team collaborators on the new repo you have created. The rest of the team members that did not make the initial repo will clone directly from the person who created the new repo, **do NOT fork** the repo. -->
 
 
-## Create Database and Tables
+<!-- ## Create Database and Tables
 
-See the `database.sql` file for database setup and details. It offers some of the SQL to get you started but you'll need to set up your tables and the relationships between them.
+See the `database.sql` file for database setup and details. It offers some of the SQL to get you started but you'll need to set up your tables and the relationships between them. -->
 
 
-## Development Setup Instructions
+<!-- ## Development Setup Instructions
 
 * Run `npm install`
 * Start postgres if not running already by using `brew services start postgresql`
 * Run `npm run server` to start the server
 * Run `npm run client` to start the client
-* Navigate to `localhost:3000`
+* Navigate to `localhost:3000` -->
 
 
-## Base Features
+<!-- ## Base Features
 
-You will need 2 views for the Base Features. You should put some thought into the UI and how to style it.
+You will need 2 views for the Base Features. You should put some thought into the UI and how to style it. -->
 
 
-### Search View
+<!-- ### Search View
 
 - Allow a user to enter a search string and submit a search request.
 - Query the `Giphy API Search Endpoint` with the given search string **FROM THE SERVER**.
 - Display the results on the DOM.
-- Allow a user to Favorite any of the resulting images. You'll need to think about what information to save to your own database. Generally you only store the minimum needed to show this image again on the **Favorites View**.
+- Allow a user to Favorite any of the resulting images. You'll need to think about what information to save to your own database. Generally you only store the minimum needed to show this image again on the **Favorites View**. -->
 
 
-### Favorites View
+<!-- ### Favorites View
 
 - Allow a user to see all of the Giphy images they have Favorited. The actual images need to appear on the DOM.
 - Allow a user to set a category for a favorite image.
     - Each favorite image can only have 1 category at a time.
-    - The category needs to be one of the categories in the database.
+    - The category needs to be one of the categories in the database. -->
 
 
-## Existing Routes
+<!-- ## Existing Routes
 
 You are given two router modules on the server with stubs for the routes you may need.
 
@@ -54,10 +70,10 @@ You are given two router modules on the server with stubs for the routes you may
     - For adding a new favorite image. You'll need to think about what is needed. Does it need a category?
 
 - `PUT /api/favorite` (incomplete)
-    - For setting a category on an image. It expects both a query parameter and a data body. Feel free to change it as needed.
+    - For setting a category on an image. It expects both a query parameter and a data body. Feel free to change it as needed. -->
 
 
-## Stretch Features
+<!-- ## Stretch Features
 
 1. Allow favorites to be removed/unfavorited
 1. Allow for a favorite to have **many categories** instead of just one
@@ -65,5 +81,5 @@ You are given two router modules on the server with stubs for the routes you may
 1. Add another view that allows a user to manage the categories
     - User should be able to create a new category
     - User should be able to edit an existing category
-    - User should be able to delete/remove an existing category
+    - User should be able to delete/remove an existing category -->
 
